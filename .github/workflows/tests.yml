@@ -36,8 +36,6 @@ jobs:
       run: |
         RUSTFLAGS="-Ctarget-cpu=native" cargo test --all
 
-  # As of Rust 1.87, doctests aren't being run when cross-compiling,
-  # keep that in mind.
   tests-qemu:
     name: "Run tests in QEMU (${{ matrix.target }})"
     runs-on: ubuntu-latest
@@ -59,7 +57,7 @@ jobs:
     - name: Install Rust
       uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # v1
       with:
-        toolchain: 1.87.0 # MSRV
+        toolchain: 1.89.0 # Ideally should be the MSRV, but 1.89 supports running doctests when cross-compiling.
         targets: "${{ matrix.target }}"
 
     - name: Install Cross
@@ -97,7 +95,7 @@ jobs:
     - name: Install Rust
       uses: dtolnay/rust-toolchain@b3b07ba8b418998c39fb20f53e8b695cdcc8de1b # v1
       with:
-        toolchain: 1.87.0 # MSRV
+        toolchain: 1.89.0 # Ideally should be the MSRV, but 1.89 supports running doctests when cross-compiling.
         targets: "wasm32-wasip2"
 
     - name: Install Wasmtime
