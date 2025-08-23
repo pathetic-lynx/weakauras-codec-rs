@@ -39,15 +39,17 @@ jobs:
   # As of Rust 1.87, doctests aren't being run when cross-compiling,
   # keep that in mind.
   tests-qemu:
-    name: Run tests in QEMU
+    name: "Run tests in QEMU (${{ matrix.target }})"
     runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
           # Big-endian arch
           - target: "s390x-unknown-linux-gnu"
+            rustflags: ""
           # 32-bit x86
           - target: "i686-unknown-linux-gnu"
+            rustflags: "-Ctarget-cpu=haswell"
     steps:
     - name: Checkout the repository
       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -72,7 +74,7 @@ jobs:
 
     - name: Run tests
       run: |
-        cross test --target="${{ matrix.target }}" --all
+        RUSTFLAGS="${{ matrix.rustflags }}" cross test --target="${{ matrix.target }}" --all
 
   tests-wasm:
     name: "Run tests on WASM (${{ matrix.label }})"
