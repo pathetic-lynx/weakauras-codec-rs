@@ -28,7 +28,7 @@ use core::convert::TryFrom;
 #[cfg(feature = "arbitrary")]
 use arbitrary::Arbitrary;
 #[cfg(feature = "serde")]
-use serde::{
+use serde_core::{
     de::{self, Deserialize, Deserializer, MapAccess, SeqAccess, Visitor},
     ser::{Serialize, Serializer},
 };
@@ -277,7 +277,7 @@ impl Serialize for LuaValue {
     where
         S: Serializer,
     {
-        use serde::ser::{SerializeMap, SerializeSeq};
+        use serde_core::ser::{SerializeMap, SerializeSeq};
 
         match self {
             LuaValue::String(s) => serializer.serialize_str(s),
