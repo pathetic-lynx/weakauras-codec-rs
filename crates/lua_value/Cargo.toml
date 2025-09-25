@@ -1,6 +1,6 @@
 [package]
 name = "weakauras-codec-lua-value"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Velithris"]
 license = "MIT"
 description = "Provides types that behave similarly to Lua types."

@@ -9,7 +9,7 @@ repository = "https://github.com/Zireael-N/weakauras-codec-rs"
 
 [package]
 name = "weakauras-codec"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Velithris"]
 license = "MIT"
 description = "Provides routines for decoding and encoding WeakAuras-compatible strings."
@@ -41,5 +41,5 @@ weakauras-codec-base64 = { version = "0.1.0", path = "crates/base64" }
 weakauras-codec-lib-compress = { version = "0.1.0", path = "crates/lib_compress", optional = true }
 weakauras-codec-ace-serialize = { version = "0.1.0", path = "crates/ace_serialize" }
 weakauras-codec-lib-serialize = { version = "0.1.0", path = "crates/lib_serialize" }
-weakauras-codec-lua-value = { version = "0.1.0", path = "crates/lua_value" }
+weakauras-codec-lua-value = { version = "0.1.1", path = "crates/lua_value" }
 flate2 = { version = "1.1.2", default-features = false }
