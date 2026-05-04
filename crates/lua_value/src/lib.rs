@@ -385,8 +385,13 @@ impl<'de> Deserialize<'de> for LuaValue {
             where
                 V: MapAccess<'de>,
             {
-                #[cfg(any(feature = "indexmap", feature = "fnv"))]
+                #[cfg(feature = "indexmap")]
                 let mut result = Map::with_capacity(map.size_hint().unwrap_or(16));
+                #[cfg(all(not(feature = "indexmap"), feature = "fnv"))]
+                let mut result = Map::with_capacity_and_hasher(
+                    map.size_hint().unwrap_or(16),
+                    Default::default(),
+                );
                 #[cfg(not(any(feature = "indexmap", feature = "fnv")))]
                 let mut result = Map::new();
 
