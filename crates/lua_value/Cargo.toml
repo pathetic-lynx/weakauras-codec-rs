@@ -21,7 +21,7 @@ serde = ["dep:serde_core", "dep:serde"]
 arbitrary = { version = "1.4.2", features = ["derive"], optional = true }
 fnv = { version = "1.0.7", optional = true }
 indexmap = { version = "2.11.4", optional = true }
-serde_core = { version = "1.0.226", default-features = false, optional = true }
+serde_core = { version = "1.0.226", optional = true }
 
 # If someone depends on this crate and on serde at the same time,
 # make sure that the latter is at least 1.0.220.
