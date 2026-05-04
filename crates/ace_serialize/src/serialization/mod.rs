@@ -108,7 +108,7 @@ impl Serializer {
             self.result
                 .push_str(if value > 0.0 { "1.#INF" } else { "-1.#INF" })
         } else {
-            let mut buffer = ryu::Buffer::new();
+            let mut buffer = zmij::Buffer::new();
             let str_value = buffer.format_finite(value);
 
             if str_value.parse::<f64>().unwrap() == value {
