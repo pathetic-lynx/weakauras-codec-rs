@@ -1,6 +1,6 @@
 [package]
 name = "weakauras-codec-ace-serialize"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Velithris"]
 license = "MIT"
 description = """
@@ -23,6 +23,6 @@ lua-value-indexmap = ["weakauras-codec-lua-value/indexmap"]
 serde = ["weakauras-codec-lua-value/serde"]
 
 [dependencies]
-weakauras-codec-lua-value = { version = "0.1.0", path = "../lua_value" }
+weakauras-codec-lua-value = { version = "0.1.2", path = "../lua_value" }
 itoa = "1.0.18"
 zmij = "1.0.21"

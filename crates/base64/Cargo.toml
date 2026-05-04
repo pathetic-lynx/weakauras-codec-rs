@@ -1,6 +1,6 @@
 [package]
 name = "weakauras-codec-base64"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["Velithris", "Wojciech Muła", "Alfred Klomp", "Daniel Lemire", "Nick Galbreath", "Matthieu Darbois"]
 license = "MIT AND BSD-2-Clause"
 description = """
