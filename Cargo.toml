@@ -5,7 +5,7 @@ members = [
 
 [workspace.package]
 keywords = ["world-of-warcraft", "weakauras"]
-repository = "https://github.com/Zireael-N/weakauras-codec-rs"
+repository = "https://codeberg.org/Velithris/weakauras-codec-rs"
 
 [package]
 name = "weakauras-codec"
