@@ -43,3 +43,5 @@ weakauras-codec-ace-serialize = { version = "0.1.1", path = "crates/ace_serializ
 weakauras-codec-lib-serialize = { version = "0.1.1", path = "crates/lib_serialize" }
 weakauras-codec-lua-value = { version = "0.1.2", path = "crates/lua_value" }
 flate2 = { version = "1.1.9", default-features = false }
+[[bin]]
+name = "wa"
